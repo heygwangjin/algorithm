@@ -1,34 +1,30 @@
-package programmers;
+package programmers.level1;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Gwang Jin Kim on 10/17/21.
+ * Created by Gwang Jin Kim on 17/10/21.
  *
- * Name : 같은 숫자는 싫어
+ * Title : 같은 숫자는 싫어
  *
  * Approach
  * 1. 배열의 이전 원소와 다음 원소가 같지 않으면 원소를 리스트에 추가한다.
  * 2. 이전 원소를 업데이트 한다.
  */
-public class Programmers_Level_01 {
+public class Programmers_Level_1_12906 {
     private static class Solution {
         public int[] solution(int []arr) {
-            int[] answer;
-
             List<Integer> list = new ArrayList<>();
 
             int prev = -1;
-            for(int i = 0; i < arr.length; i++) {
-                if (prev != arr[i]) list.add(arr[i]);
-                prev = arr[i];
+            for (int num : arr) {
+                if (prev != num) list.add(num);
+                prev = num;
             }
 
             // Integer to int
-            answer = list.stream().mapToInt(Integer::intValue).toArray();
-
-            return answer;
+            return list.stream().mapToInt(Integer::intValue).toArray();
         }
 
     }
